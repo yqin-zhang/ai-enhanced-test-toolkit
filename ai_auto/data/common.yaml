@@ -1,0 +1,8 @@
+# 跨接口共享。改 device 后，list / 查询 / 改状态 / 删除都走同一台设备。
+base_url: http://127.0.0.1:8000
+# 相对仓库根目录，与 device_server 启动时的 sqlite:///./device_test.db 一致
+db_path: device_test.db
+device:
+  device_id: dev002
+  device_name: 红外传感器
+  device_type: sensor

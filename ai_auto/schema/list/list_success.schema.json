@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "List success response",
+  "description": "对应 GET /device/list 成功时的响应体，data 为设备对象数组",
+  "type": "object",
+  "required": ["code", "data"],
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "type": "integer",
+      "const": 0
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "device_id",
+          "device_name",
+          "device_type",
+          "status",
+          "create_time"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "device_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "device_name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "device_type": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+          },
+          "status": {
+            "type": "string",
+            "enum": ["online", "offline", "fault"]
+          },
+          "create_time": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}$"
+          }
+        }
+      }
+    }
+  }
+}

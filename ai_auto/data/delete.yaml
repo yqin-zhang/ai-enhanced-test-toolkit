@@ -1,0 +1,2 @@
+path_template: /device/{device_id}
+wrong_suffix: /delete

@@ -1,0 +1,10 @@
+{
+    "code": 0,
+    "data": {
+        "device_id": "dev002",
+        "device_name": "红外传感器",
+        "device_type": "sensor",
+        "status": "offline",
+        "create_time": "2026-08-21 09:51:58"
+    }
+}

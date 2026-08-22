@@ -1,0 +1,24 @@
+path_template: /device/{device_id}/status
+legal_status:
+  - offline
+  - online
+  - fault
+illegal_status:
+  - busy
+  - unknown
+wrong_case_status:
+  - ONLINE
+  - Offline
+empty_status: ""
+sample_status: online
+missing_body: {}
+wrong_type_status:
+  - 1
+  - null
+wrong_methods:
+  - GET
+  - POST
+invalid_body: |
+  {
+      "status": "offline"，
+  }

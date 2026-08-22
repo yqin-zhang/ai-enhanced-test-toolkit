@@ -1,0 +1,10 @@
+path: /device/list
+# DELETE /device/list 会被 DELETE /device/{id} 吃掉，不能测 405
+wrong_methods:
+  - POST
+  - PUT
+wrong_paths:
+  - path: /device/lists
+    detail: 设备不存在  # 当成 GET /device/{id}
+  - path: /devices/list
+    detail: Not Found  # 前缀都不对，才是框架 404

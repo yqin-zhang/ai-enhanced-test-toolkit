@@ -1,0 +1,5 @@
+path: /mock/server500
+wrong_methods:
+  - POST
+  - PUT
+  - DELETE

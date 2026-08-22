@@ -1,0 +1,32 @@
+path: /device/register
+wrong_methods:
+  - PUT
+  - PATCH
+illegal_body: "{not-json"
+invalid_body: |
+  {
+      "device_id": "dev002",
+      "device_name": "红外传感器",
+      "device_type": "sensor"，
+  }
+fail_422:
+  - {}
+  - device_name: 温度传感器
+    device_type: sensor
+  - device_id: dev001
+    device_type: sensor
+  - device_id: dev001
+    device_name: 温度传感器
+  - device_id: dev001
+    device_name: 温度传感器
+    device_type: ""
+  - device_id: dev001
+    device_name: ""
+    device_type: sensor
+  - device_id: ""
+    device_name: 温度传感器
+    device_type: sensor
+oversize:
+  device_id: 65
+  device_name: 129
+  device_type: 65

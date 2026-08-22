@@ -1,25 +1,43 @@
 # ai-enhanced-test-toolkit
-Demo for test‑development：Contains self‑developed device management service, pytest API automation, MCP+RAG AI‑driven interface testing tool.
 
-# AI‑Enhanced‑Test‑Toolkit
-> 测试开发秋招个人Demo项目
+测试开发秋招个人 Demo。仓库里目前有被测服务和一套 pytest 接口自动化；AI 测试工具是后续模块。
 
-## 项目介绍
-本仓库包含三套模块：
-1. **device_server.py**：自研设备管理模拟后端服务(FastAPI+SQLite)，作为被测系统，提供设备注册、状态修改、删除查询等REST接口。
-2. **device‑api‑automation【项目1】**：基于pytest+requests实现传统接口自动化。完成正向、异常、边界场景测试，支持接口‑数据库一致性校验，输出测试报告。
-3. **mcp‑rag‑ai‑tester【项目2｜核心主项目】** 基于MCP协议+RAG实现AI接口测试工具。
-- RAG解析OpenAPI接口文档，检索测试相关信息
-- Agent生成测试用例，通过MCP调用可插拔Skill执行http请求、数据库校验
-- 支持降级运行：大模型不可用时，可脱离AI直接执行回归用例
-- 输出Markdown格式测试报告
+## 目录
+
+1. **`test_projects/device_server.py`**：设备管理模拟后端（FastAPI + SQLite）。提供注册、列表、查询、改状态、删除和模拟 500。
+2. **`ai_auto/`【项目 1】**：pytest + requests 接口自动化。正向 / 异常 / 边界、jsonschema 校验、接口-库一致性、日志和 Allure 报告。说明见 [ai_auto/README.md](ai_auto/README.md)，场景明细见 [ai_auto/接口测试.md](ai_auto/接口测试.md)。
+3. **mcp-rag-ai-tester【项目 2｜计划中】**：MCP + RAG 的 AI 接口测试工具（尚未落在本仓库）。
 
 ## 技术栈
-Python3 | FastAPI | SQLite | Pytest | Requests | MCP | Chroma(RAG) | SQLAlchemy
 
-## 项目边界 & 后续扩展方向
-本项目为个人Demo，聚焦接口层自动化。
-计划扩展：
-- 接入Playwright实现UI‑Skill，完成GUI自动化
-- 引入Reranker优化检索效果
-- 增加自动缺陷报告生成能力
+Python 3 | FastAPI | SQLite | SQLAlchemy | Pytest | Requests | jsonschema | Allure
+
+## 快速开始
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 只要跑测试（不含 FastAPI）
+pip install -r ai_auto/requirements.txt
+
+# 还要在本机起被测服务时再装
+pip install -r test_projects/requirements.txt
+
+# 另开终端启动被测服务
+.venv/bin/python test_projects/device_server.py
+
+# 跑自动化
+cd ai_auto
+../.venv/bin/python -m pytest
+```
+
+两个都要可以 `pip install -r requirements.txt`（会装齐）。
+
+更完整的环境、冒烟、日志和 Allure 用法见 [ai_auto/README.md](ai_auto/README.md)。
+
+## 后续方向
+
+- 接入 Playwright，补 UI Skill
+- 落地 MCP + RAG 测试工具
+- 检索侧加 Reranker，以及自动缺陷报告

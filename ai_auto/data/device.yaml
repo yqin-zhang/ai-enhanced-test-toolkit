@@ -1,0 +1,6 @@
+path_template: /device/{device_id}
+wrong_methods:
+  - POST
+  - PUT
+not_exist_id: not_exist_999
+wrong_suffix: /xxx
