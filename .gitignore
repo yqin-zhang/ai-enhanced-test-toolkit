@@ -39,6 +39,10 @@ pip-delete-this-directory.txt
 # Allure 原始结果（可再生成）；静态网页 reports/allure-report 可以入库
 ai_auto/reports/allure-results/
 
+# 项目2：RAG 索引和运行报告（可再生成）
+ai_tool/rag/store/*.json
+ai_tool/reports/*.md
+
 # Unit test / coverage reports
 htmlcov/
 .tox/

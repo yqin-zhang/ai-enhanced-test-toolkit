@@ -1,0 +1,4 @@
+# Project 2 skeleton. Do not add sentence-transformers or chromadb.
+mcp>=1.12.0,<2
+requests>=2.31.0
+pyyaml>=6.0

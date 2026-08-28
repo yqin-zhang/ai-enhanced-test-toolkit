@@ -1,0 +1,23 @@
+# 项目2 运行配置。路径：db 相对仓库根；RAG 源相对本文件所在目录。
+
+device:
+  base_url: http://127.0.0.1:8000
+  db_path: device_test.db
+  timeout_seconds: 5
+
+rag:
+  sources:
+    - ../ai_auto/接口测试.md
+  store_dir: rag/store
+  top_k: 3
+  # 被测服务已启动时，额外把 /openapi.json 切成一块；服务没起来就跳过
+  fetch_openapi: true
+
+llm:
+  enabled: false
+  base_url: ""
+  model: ""
+  api_key_env: AI_TOOL_LLM_API_KEY
+
+mcp:
+  server_name: ai-tester
