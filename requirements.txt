@@ -1,4 +1,4 @@
-# 全量本地：被测服务 + 自动化 + 项目2。只要跑测试用 ai_auto/requirements.txt
+# 全量本地：被测服务 + 自动化 + 项目2。跑测试用 ai_auto/requirements.txt
 -r test_projects/requirements.txt
 -r ai_auto/requirements.txt
 -r ai_tool/requirements.txt
