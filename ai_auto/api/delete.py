@@ -15,5 +15,9 @@ class DeleteAPI:
         return join_url("/device/")
 
     @classmethod
+    def collection_url(cls) -> str:
+        return join_url(cls.data["collection_path"])
+
+    @classmethod
     def wrong_path_url(cls, device_id: str) -> str:
         return cls.url(device_id) + cls.data["wrong_suffix"]

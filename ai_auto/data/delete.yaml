@@ -1,2 +1,16 @@
 path_template: /device/{device_id}
 wrong_suffix: /delete
+# DEL-N07：集合地址（无尾段）
+collection_path: /device
+# DEL-P03：DELETE 携带 JSON 请求体（服务应忽略）
+delete_body:
+  force: true
+# DEL-P04：DELETE 携带 query 参数（服务应忽略）
+delete_query:
+  force: 1
+# DEL-N06：200 字符超长 id
+long_id: "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+# DEL-N05：混合大小写 id 前缀（用例拼 uuid 后对其 .upper()）
+case_prefix: CaseDev_
+# DEL-N08
+patch_method: PATCH

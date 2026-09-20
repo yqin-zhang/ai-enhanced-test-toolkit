@@ -1,0 +1,2 @@
+422 (0.002s)
+{"detail":[{"type":"missing","loc":["body","device_id"],"msg":"Field required","input":{"device_name":"温度传感器","device_type":"sensor"}}]}

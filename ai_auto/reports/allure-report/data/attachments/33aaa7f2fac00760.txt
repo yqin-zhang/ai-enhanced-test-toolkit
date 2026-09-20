@@ -1,0 +1,2 @@
+200 (0.006s)
+{"code":0,"msg":"注册成功","data":{"device_id":"auto_d2f0b96a63cd"}}

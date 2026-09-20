@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Register 422 when top-level body is a non-object value",
+  "description": "对应 POST /device/register 的 body 为数组等非对象值（例如 [1,2]）时的响应体。字符串 body 使用 register_fail_illegal_json.schema.json。",
+  "type": "object",
+  "required": ["detail"],
+  "additionalProperties": false,
+  "properties": {
+    "detail": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["type", "loc", "msg", "input"],
+        "additionalProperties": true,
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "model_attributes_type"
+          },
+          "loc": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "items": {
+              "type": "string",
+              "const": "body"
+            }
+          },
+          "msg": {
+            "type": "string",
+            "const": "Input should be a valid dictionary or object to extract fields from"
+          },
+          "input": {
+            "type": "array"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

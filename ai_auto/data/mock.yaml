@@ -3,3 +3,19 @@ wrong_methods:
   - POST
   - PUT
   - DELETE
+# MOCK-N03：连续请求次数
+repeat_times: 3
+# MOCK-N04：query 不影响结果
+query_params:
+  a: 1
+  b: 2
+# MOCK-N05：GET 携带 JSON body
+get_body:
+  x: 1
+# MOCK-N07 / N08
+patch_method: PATCH
+head_method: HEAD
+# MOCK-N09：路径大写
+upper_path: /mock/SERVER500
+# MOCK-N10：多一段子路径
+sub_suffix: /xxx

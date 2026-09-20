@@ -22,3 +22,42 @@ invalid_body: |
   {
       "status": "offline"，
   }
+# ST-P02a~f：状态流转矩阵 source→target（用例显式置 source 初态）
+transitions:
+  - source: offline
+    target: online
+  - source: offline
+    target: fault
+  - source: online
+    target: offline
+  - source: online
+    target: fault
+  - source: fault
+    target: offline
+  - source: fault
+    target: online
+# ST-N14~N16：合法字符串但不在白名单
+string_reject_status:
+  - "1"
+  - " online "
+  - "   "
+# ST-N17~N19：布尔 / 数组 / 对象 → 422 string_type
+ext_wrong_type:
+  - true
+  - ["online"]
+  - a: 1
+# ST-N20：顶层 body 为数组 → 422 model_attributes_type
+non_object_array:
+  - status: online
+# ST-N21~N23：非 application/json 的发送方式
+content_type_cases:
+  - form
+  - raw
+  - text_plain
+# ST-N11/N12：不存在设备 + 非法/大小写状态（白名单先校验 → 400）
+not_exist_illegal_status:
+  - busy
+  - ONLINE
+# ST-N25
+protocol_methods:
+  - PATCH

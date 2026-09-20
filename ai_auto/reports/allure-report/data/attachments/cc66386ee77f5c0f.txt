@@ -1,0 +1,1 @@
+DELETE http://127.0.0.1:8000/device/auto_bcd45c9f8fa5

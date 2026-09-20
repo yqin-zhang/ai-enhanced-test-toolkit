@@ -1,0 +1,2 @@
+422 (0.002s)
+{"detail":[{"type":"string_type","loc":["body","device_type"],"msg":"Input should be a valid string","input":null}]}

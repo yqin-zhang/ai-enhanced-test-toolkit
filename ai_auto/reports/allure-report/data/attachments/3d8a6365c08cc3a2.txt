@@ -1,0 +1,2 @@
+POST http://127.0.0.1:8000/device/register
+{"device_id": "auto_21f4dab880ff", "device_name": "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn", "device_type": "sensor"}

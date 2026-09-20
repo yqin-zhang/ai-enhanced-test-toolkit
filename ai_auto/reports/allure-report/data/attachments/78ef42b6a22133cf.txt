@@ -1,0 +1,2 @@
+422 (0.002s)
+{"detail":[{"type":"string_too_short","loc":["body","device_type"],"msg":"String should have at least 1 character","input":"","ctx":{"min_length":1}}]}

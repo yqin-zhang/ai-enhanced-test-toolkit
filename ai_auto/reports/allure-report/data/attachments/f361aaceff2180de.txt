@@ -1,0 +1,2 @@
+422 (0.002s)
+{"detail":[{"type":"missing","loc":["body","device_id"],"msg":"Field required","input":{}},{"type":"missing","loc":["body","device_name"],"msg":"Field required","input":{}},{"type":"missing","loc":["body","device_type"],"msg":"Field required","input":{}}]}

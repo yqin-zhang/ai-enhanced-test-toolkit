@@ -1,0 +1,2 @@
+POST http://127.0.0.1:8000/device/register
+{"device_id": "auto_e2e_Baf927a71", "device_name": "e2e设备", "device_type": "sensor"}

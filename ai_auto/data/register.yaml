@@ -30,3 +30,55 @@ oversize:
   device_id: 65
   device_name: 129
   device_type: 65
+# REG-P02~P07：合法长度边界，用例按 field/length 构造载荷
+boundary_fields:
+  - field: device_id
+    length: 1
+  - field: device_id
+    length: 64
+  - field: device_name
+    length: 1
+  - field: device_name
+    length: 128
+  - field: device_type
+    length: 1
+  - field: device_type
+    length: 64
+# REG-P08~P10：中文 / 前后空格 / 纯空格；device_id 由用例动态生成保证唯一
+charset:
+  chinese:
+    device_name: 摄像头
+    device_type: 传感器-室内
+  spaces:
+    device_name: "  带空格  "
+  spaces_only:
+    device_name: "   "
+# REG-P11：额外字段应被忽略
+extra_field:
+  name: foo
+  value: bar
+# REG-N12~N18：字段类型错误矩阵（数字 / null / 数组）
+field_type_errors:
+  - field: device_id
+    value: 123
+  - field: device_name
+    value: 123
+  - field: device_type
+    value: 123
+  - field: device_id
+    value: null
+  - field: device_name
+    value: null
+  - field: device_type
+    value: null
+  - field: device_id
+    value: ["a"]
+# REG-N19：顶层 body 为数组
+non_object_array:
+  - 1
+  - 2
+# REG-N21~N23：非 application/json 的发送方式
+content_type_cases:
+  - kind: form
+  - kind: raw
+  - kind: text_plain

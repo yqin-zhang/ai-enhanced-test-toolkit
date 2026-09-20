@@ -1,0 +1,2 @@
+POST http://127.0.0.1:8000/device/register
+{"device_id": "a.b", "device_name": "温度传感器", "device_type": "sensor"}

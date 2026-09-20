@@ -1,0 +1,2 @@
+POST http://127.0.0.1:8000/device/register
+{"device_id": "auto_7b075988cbc7", "device_name": "多台设备0", "device_type": "type0"}

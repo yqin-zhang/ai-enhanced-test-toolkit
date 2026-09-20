@@ -1,0 +1,2 @@
+200 (0.002s)
+{"code":0,"data":{"device_id":"CaseDev_6828f8","device_name":"红外传感器","device_type":"sensor","status":"offline","create_time":"2026-09-19 20:37:40"}}

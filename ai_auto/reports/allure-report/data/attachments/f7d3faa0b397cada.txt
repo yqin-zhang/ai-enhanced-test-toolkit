@@ -1,0 +1,2 @@
+200 (0.003s)
+{"code":0,"data":{"device_id":"auto_e2e_Baf927a71","device_name":"e2e设备","device_type":"sensor","status":"online","create_time":"2026-09-19 20:37:40"}}

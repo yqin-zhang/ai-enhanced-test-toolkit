@@ -1,0 +1,2 @@
+POST http://127.0.0.1:8000/device/register
+b'{\n    "device_id": "dev002",\n    "device_name": "\xe7\xba\xa2\xe5\xa4\x96\xe4\xbc\xa0\xe6\x84\x9f\xe5\x99\xa8",\n    "device_type": "sensor"\xef\xbc\x8c\n}\n'

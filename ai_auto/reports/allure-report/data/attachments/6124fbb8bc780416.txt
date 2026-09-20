@@ -1,0 +1,2 @@
+200 (0.003s)
+{"code":0,"data":{"device_id":"auto_744a42e183ff","device_name":"红外传感器","device_type":"sensor","status":"offline","create_time":"2026-09-19 20:37:41"}}

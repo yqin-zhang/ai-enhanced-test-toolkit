@@ -1,0 +1,2 @@
+422 (0.002s)
+{"detail":[{"type":"string_too_long","loc":["body","device_name"],"msg":"String should have at most 128 characters","input":"nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn","ctx":{"max_length":128}}]}

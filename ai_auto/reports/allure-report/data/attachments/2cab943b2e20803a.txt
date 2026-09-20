@@ -1,0 +1,2 @@
+PUT http://127.0.0.1:8000/device/auto_e2e_f8f4604b/status
+{"status": "online"}

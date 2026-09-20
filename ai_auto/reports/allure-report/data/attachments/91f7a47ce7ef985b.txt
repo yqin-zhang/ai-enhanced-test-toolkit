@@ -1,0 +1,2 @@
+PUT http://127.0.0.1:8000/device/register
+{"device_id": "dev002", "device_name": "红外传感器", "device_type": "sensor"}

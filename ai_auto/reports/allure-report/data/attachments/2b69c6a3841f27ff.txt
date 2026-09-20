@@ -1,0 +1,2 @@
+PUT http://127.0.0.1:8000/device/auto_29841ef81b4a/status
+{"status": "fault"}

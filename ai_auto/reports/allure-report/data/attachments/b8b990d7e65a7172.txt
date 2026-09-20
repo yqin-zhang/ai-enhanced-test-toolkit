@@ -1,0 +1,2 @@
+200 (0.003s)
+{"code":0,"data":[{"device_id":"auto_7b075988cbc7","device_name":"多台设备0","device_type":"type0","status":"offline","create_time":"2026-09-19 20:37:40"},{"device_id":"auto_9df9785be8fa","device_name":"多台设备1","device_type":"type1","status":"offline","create_time":"2026-09-19 20:37:40"},{"device_id":"auto_2d5f52b4ac50","device_name":"多台设备2","device_type":"type2","status":"offline","create_time":"2026-09-19 20:37:41"}]}

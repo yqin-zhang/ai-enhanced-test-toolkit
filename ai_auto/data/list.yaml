@@ -3,8 +3,23 @@ path: /device/list
 wrong_methods:
   - POST
   - PUT
+# LIST-N04 / N05：协议层方法（实测均 405，Allow: GET）
+protocol_methods:
+  - PATCH
+  - HEAD
 wrong_paths:
   - path: /device/lists
     detail: 设备不存在  # 当成 GET /device/{id}
   - path: /devices/list
     detail: Not Found  # 前缀都不对，才是框架 404
+# LIST-N06 / N07：路径大写被当 id；双斜杠前缀不匹配
+case_paths:
+  - path: /device/LIST
+    detail: 设备不存在
+  - path: //device/list
+    detail: Not Found
+# LIST-P05：未定义 query 参数应被忽略
+ignored_query:
+  page: 1
+  size: 999
+  x: y

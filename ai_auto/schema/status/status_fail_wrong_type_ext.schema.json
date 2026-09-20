@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Status 422 when status is bool/array/object",
+  "description": "对应 PUT /device/{device_id}/status 的 status 为布尔、数组或对象时的响应体。数字或 null 使用 status_fail_wrong_type.schema.json。",
+  "type": "object",
+  "required": ["detail"],
+  "additionalProperties": false,
+  "properties": {
+    "detail": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["type", "loc", "msg", "input"],
+        "additionalProperties": true,
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "string_type"
+          },
+          "loc": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": [
+              { "type": "string", "const": "body" },
+              { "type": "string", "const": "status" }
+            ]
+          },
+          "msg": {
+            "type": "string",
+            "const": "Input should be a valid string"
+          },
+          "input": {
+            "anyOf": [
+              { "type": "boolean" },
+              { "type": "array" },
+              { "type": "object" }
+            ]
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

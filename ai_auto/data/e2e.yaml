@@ -1,0 +1,15 @@
+# 跨接口 E2E / 契约测试数据
+id_prefix: auto_e2e_
+# E2E-01：生命周期中依次切换的状态
+lifecycle_status_flow:
+  - online
+  - fault
+# E2E-02：多设备标签；只改 peer_changed_index、只删 peer_deleted_index
+peer_labels:
+  - A
+  - B
+  - C
+peer_changed_index: 1
+peer_deleted_index: 2
+peer_name: e2e设备
+peer_type: sensor

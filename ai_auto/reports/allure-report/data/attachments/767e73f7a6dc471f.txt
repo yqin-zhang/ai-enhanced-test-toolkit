@@ -1,0 +1,2 @@
+POST http://127.0.0.1:8000/device/register
+{"device_id": "auto_1db14ce0e9", "device_name": "  带空格  ", "device_type": "sensor"}

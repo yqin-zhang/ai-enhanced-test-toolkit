@@ -2,5 +2,35 @@ path_template: /device/{device_id}
 wrong_methods:
   - POST
   - PUT
+# GET-N10 / N11：协议层方法（实测均 405，Allow: GET）
+protocol_methods:
+  - PATCH
+  - HEAD
 not_exist_id: not_exist_999
 wrong_suffix: /xxx
+# GET-P02a/b：device_id 长度边界（用例以 b 重复构造，先删后建）
+boundary_ids:
+  - length: 1
+  - length: 64
+# GET-P04 / P05：特殊字符 id（固定值，用例先删后建）
+special_ids:
+  space: "a b"
+  dot: "a.b"
+# GET-P07a/b/c：三态查询
+statuses:
+  - online
+  - offline
+  - fault
+# GET-P08：query 参数应被忽略
+query_params:
+  x: "1"
+  y: "2"
+# GET-N07~N09：不存在的特殊 id，路由仍匹配 → 404「设备不存在」
+nonexistent_ids:
+  - kind: sqli
+    id: "' OR '1'='1"
+  - kind: emoji
+    id: "😀"
+  - kind: overlong
+    repeat: z
+    length: 200
